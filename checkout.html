@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تأكيد الدفع - المملكة السليمانية</title>
+    <style>
+        body {
+            margin: 0; padding: 0;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background: linear-gradient(135deg, #070b12 0%, #0d1527 100%);
+            color: #ffffff; min-height: 100vh;
+            display: flex; flex-direction: column; align-items: center;
+        }
+        nav {
+            width: 100%; background: rgba(13, 21, 39, 0.8); backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(241, 196, 15, 0.15);
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 15px 50px; box-sizing: border-box;
+        }
+        nav .logo { color: #f1c40f; font-size: 22px; font-weight: bold; }
+nav .nav-links { 
+    display: flex !important; 
+    flex-direction: row !important;
+    gap: 20px; 
+    list-style: none !important; 
+    padding: 0; 
+    margin: 0; 
+}
+
+nav .nav-links a {
+    color: #f1c40f; 
+    text-decoration: none; 
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px 24px; 
+    border-radius: 30px; 
+    border: 1px solid rgba(241, 196, 15, 0.4);
+    background: rgba(11, 17, 30, 0.6);
+    backdrop-filter: blur(10px);
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    box-shadow: inset 0 0 12px rgba(241, 196, 15, 0.05);
+    display: inline-flex;
+    align-items: center;
+}
+
+nav .nav-links a:hover {
+    color: #0b111e !important; 
+    background: #f1c40f !important;
+    box-shadow: 0 0 20px #f1c40f, 0 0 40px rgba(241, 196, 15, 0.6);
+    transform: translateY(-5px) scale(1.05);
+    border-color: #f1c40f !important;
+}        
+        .checkout-container {
+            background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(12px);
+            border: 1px solid rgba(241, 196, 15, 0.2);
+            padding: 40px; border-radius: 20px; width: 90%; max-width: 500px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); margin-top: 50px; text-align: center;
+        }
+        .checkout-container h2 { color: #f1c40f; margin-top: 0; }
+        .form-group { margin-bottom: 20px; text-align: right; }
+        .form-group label { display: block; margin-bottom: 8px; color: #e2e8f0; font-size: 14px; }
+        .form-group input {
+            width: 100%; padding: 12px 15px; box-sizing: border-box;
+            background: rgba(2, 6, 23, 0.8); border: 1px solid rgba(148, 163, 184, 0.3);
+            border-radius: 8px; color: #ffffff; font-size: 15px; outline: none;
+        }
+        .btn-send {
+            width: 100%; padding: 14px; background: linear-gradient(135deg, #128c7e 0%, #25d366 100%);
+            border: none; border-radius: 10px; color: #ffffff; font-size: 16px; font-weight: bold; cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo"> 👑المملكة السليمانية👑
+</div>
+        <div class="nav-links">
+<li><a href="index.html">👑&nbsp;&nbsp;الرئيسية</a></li>
+<li><a href="services.html">👑&nbsp;&nbsp;الخدمات</a></li>
+<li><a href="offers.html">🔥&nbsp;&nbsp;العروض الملكية</a></li>
+<li><a href="checkout.html">💳&nbsp;&nbsp;تأكيد الدفع</a></li>   
+     </div>
+        </div>
+    </nav>
+
+    <div class="checkout-container">
+        <h2>إرسال إيصال تأكيد الدفع 💳</h2>
+        <p>يرجى إدخال اسمك وارفاق تفاصيل التحويل لإرسالها للإدارة فوراً عبر واتساب</p>
+        <form id="checkoutForm">
+            <div class="form-group">
+                <label>👤 اسم المحول بالكامل:</label>
+                <input type="text" id="senderName" placeholder="اكتب اسمك الحقيقي المستخدم في التحويل" required>
+            </div>
+            <div class="form-group">
+                <label>💰 المبلغ الذي تم تحويله:</label>
+                <input type="text" id="amountPaid" placeholder="مثال: 1800 درهم إماراتي" required>
+            </div>
+            <button type="submit" class="btn-send">💬 إرسال بيانات الدفع عبر واتساب</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('checkoutForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const myPersonalNumber = "966510239509"; 
+            const name = document.getElementById('senderName').value;
+            const amount = document.getElementById('amountPaid').value;
+            const messageText = "✅ إشعار تأكيد دفع جديد ✅%0A%0A👤 اسم المرسل: " + encodeURIComponent(name) + "%0A💰 المبلغ المحول: " + encodeURIComponent(amount) + "%0A%0A👑 يرجى مراجعة الحساب وتأكيد تفعيل الجلسة";
+            window.location.href = "https://wa.me/966510239509" + myPersonalNumber + "&text=" + messageText;
+        });
+    </script>
+</body>
+</html>
