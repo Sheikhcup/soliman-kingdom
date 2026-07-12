@@ -12,35 +12,37 @@
     <meta name="twitter:card" content="summary_large_image">
     <style>
 @media (max-width: 768px) {
-    /* تنسيق الهيكل الرئيسي للموقع على الموبايل */
-    body {
-        padding: 10px !important;
-        box-sizing: border-box !important;
-    }
-    
-    /* تحويل شريط الأزرار العلوي ليكون عمودي ومنظم */
-    header, .header, nav, .navbar {
+    /* تحويل الحاوية الكبرى (اللوجو والأزرار) لترتيب عمودي */
+    nav, .nav-links {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
-        justify-content: center !important;
         width: 100% !important;
         height: auto !important;
-        position: relative !important;
-        top: 0 !important;
-        left: 0 !important;
-        right: 0 !important;
-        gap: 12px !important;
-        padding: 15px 0 !important;
     }
 
-    /* تنسيق كل زر بشكل مستقل ليكون عريض ومريح للضغط */
-    header a, .header a, nav a, .navbar a {
-        display: block !important;
+    /* تحويل قائمة الأزرار نفسها لتصبح عمودية بالكامل */
+    .nav-links ul {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 10px 0 !important;
+        list-style: none !important;
+    }
+
+    /* تنسيق عناصر القائمة والأزرار لتأخذ عرض الشاشة بشكل مريح وفخم */
+    .nav-links ul li {
         width: 85% !important;
+        margin: 6px 0 !important;
         text-align: center !important;
+    }
+
+    .nav-links ul li a {
+        display: block !important;
+        width: 100% !important;
         padding: 12px !important;
-        margin: 4px 0 !important;
         box-sizing: border-box !important;
     }
 }
