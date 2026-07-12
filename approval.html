@@ -3,111 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:image" content="https://github.io">
-    <meta property="og:url" content="https://github.io">
-    <meta name="twitter:card" content="summary_large_image">
-    
-    <title>موافقة الأهل وتسهيل الزواج</title>
+    <title>موافقة الأهل وتسهيل الزواج - المملكة السليمانية</title>
     <style>
         body {
-            background-color: #0b132b;
+            background-color: #0b0f19;
             color: #ffffff;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            padding: 20px;
-            text-align: center;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
         }
+
         .container {
             max-width: 800px;
-            margin: 0 auto;
-            background: linear-gradient(145deg, #1c2541, #131a35);
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            border: 1px solid #f1c40f;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 12px;
+            padding: 40px 30px;
+            box-sizing: border-box;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            text-align: center;
         }
-        h1 { color: #f1c40f; font-size: 2.5rem; margin-bottom: 20px; }
-        p.desc { font-size: 1.2rem; line-height: 1.8; color: #cbd5e1; }
-        .btn-whatsapp {
-            display: inline-flex;
+
+        h1 {
+            color: gold;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .desc {
+            font-size: 16px;
+            color: #e2e8f0;
+            line-height: 1.8;
+            margin-bottom: 35px;
+        }
+
+        /* حاوية الأزرار لمنع التداخل تماماً */
+        .buttons-group {
+            display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 10px;
-            background: #25d366;
-            color: white;
-            padding: 15px 35px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 1.3rem;
-            font-weight: bold;
-            margin: 30px 0;
-            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
-            transition: transform 0.3s;
+            gap: 15px;
+            width: 100%;
+            margin-bottom: 40px;
         }
-        .btn-whatsapp:hover { transform: scale(1.05); }
+
+        .btn-action {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: 100% !important;
+            max-width: 340px !important;
+            padding: 14px !important;
+            border-radius: 30px !important;
+            text-decoration: none !important;
+            font-weight: bold !important;
+            font-size: 16px !important;
+            box-sizing: border-box !important;
+            transition: 0.3s;
+        }
+
+        .btn-whatsapp {
+            background-color: #25d366 !important;
+            color: #ffffff !important;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-twitter {
+            background-color: #1da1f2 !important;
+            color: #ffffff !important;
+            box-shadow: 0 4px 15px rgba(29, 161, 242, 0.3);
+        }
+
+        /* قسم التعليقات */
         .comments-section {
+            width: 100%;
             margin-top: 40px;
             text-align: right;
-            border-top: 1px solid #34415e;
-            padding-top: 20px;
         }
-        .comments-section h2 { color: #f1c40f; font-size: 1.8rem; }
+
+        .comments-title {
+            color: gold;
+            font-size: 22px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
         .comment-card {
-            background: #1c2541;
-            padding: 15px;
-            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 20px;
             margin-bottom: 15px;
-            border-right: 5px solid #f1c40f;
         }
-        .comment-header {
-            display: flex;
-            justify-content: space-between;
-            color: #f1c40f;
+
+        .comment-user {
             font-weight: bold;
+            color: gold;
             margin-bottom: 5px;
         }
-        .stars { color: #f1c40f; }
+
+        .stars {
+            color: #f1c40f;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 25px 15px; }
+            h1 { font-size: 26px; }
+        }
     </style>
 </head>
 <body>
+
     <div class="container">
         <h1>موافقة الأهل وتسهيل الزواج 💍</h1>
-        <p class="desc">جلسات مخصصة ومجربة لتأليف القلوب وتيسير أمور الزواج المبارك بأقوى الطرق الروحانية الشريفة لجمع الشمل والوئام وإقناع الأهل ببركة الله وتوفيقه.</p>
-<!-- زر تويتر الأزرق المنسق للمشاركة المباشرة -->
-            <a href="https://twitter.com" target="_blank" style="display: block; width: 100%; max-width: 320px; background-color: #1da1f2; color: white; padding: 14px; border-radius: 30px; text-decoration: none; font-weight: bold; text-align: center; box-shadow: 0 4px 12px rgba(29, 161, 242, 0.3);">مشاركة عبر تويتر 🐦</a>
+        <p class="desc">جلسات مخصصة ومجرّبة لتأليف القلوب وتيسير أمور الزواج المبارك بأقوى الطرق الروحانية الشريفة لجمع الشمل والوئام وإقناع الأهل ببركة الله وتوفيقه.</p>
+
+        <!-- الأزرار المصلحة والمحمية من التداخل -->
+        <div class="buttons-group">
+            <a href="https://wa.me/966510239509" target="_blank" class="btn-action btn-whatsapp">احجزي الخدمة عبر واتساب الآن 🟢</a>
+            <a href="https://twitter.com" target="_blank" class="btn-action btn-twitter">مشاركة عبر تويتر 🐦</a>
         </div>
-    <div class="comments-section">
-            <h2>تعليقات وآراء العملاء (3) 🌟</h2>
+
+        <!-- قسم تعليقات العملاء -->
+        <div class="comments-section">
+            <div class="comments-title">💬 تعليقات وآراء العملاء (3)</div>
             
             <div class="comment-card">
-                <div class="comment-header">
-                    <span>أم ريم</span>
-                    <span class="stars">⭐⭐⭐⭐⭐</span>
-                </div>
-                <p>الحمد لله رب العالمين، بعد معاناة ورفض طويل من الأهل، تيسرت الأمور بفضل الله ثم بفضل هذه الجلسة المباركة. أنصح بها وبشدة!</p>
+                <div class="comment-user">أم ريم</div>
+                <div class="stars">★★★★★</div>
+                <div>الحمد لله رب العالمين، بعد معاناة ورفض طويل من الأهل، تيسرت الأمور بفضل الله ثم بفضل هذه الجلسة المباركة. أنصح بها وبشدة!</div>
             </div>
 
             <div class="comment-card">
-                <div class="comment-header">
-                    <span>أبو فهد</span>
-                    <span class="stars">⭐⭐⭐⭐⭐</span>
-                </div>
-                <p>عمل ممتاز ومصداقية عالية جداً، تآلفت القلوب وتمت الخطوبة على خير وعقدنا القران الأسبوع الماضي.</p>
-            </div>
-
-            <div class="comment-card">
-                <div class="comment-header">
-                    <span>سارة م.</span>
-                    <span class="stars">⭐⭐⭐⭐⭐</span>
-                </div>
-                <p>كل الشكر والتقدير لكم، النتيجة ظهرت بسرعة فائقة وتغيرت معاملة الأهل تماماً وصاروا موافقين ومرحبين جداً.</p>
+                <div class="comment-user">أبو فهد</div>
+                <div class="stars">★★★★★</div>
+                <div>عمل متقن وسرية تامة وأمانة في التعامل. النتيجة ظهرت بفضل الله وتوفيقه وإقناع الأهل تّم بسلام.</div>
             </div>
         </div>
-     <!-- زر العودة السحري للصفحة الرئيسية -->
-<div style="margin-top: 30px;">
-    <a href="index.html" style="display: inline-block; color: #cbd5e1; text-decoration: none; font-size: 1.1rem; font-weight: bold; border: 2px solid #34415e; padding: 10px 25px; border-radius: 50px; transition: all 0.3s ease;" onmouseover="this.style.borderColor='#f1c40f'; this.style.color='#f1c40f';" onmouseout="this.style.borderColor='#34415e'; this.style.color='#cbd5e1';">
-        ↩️ العودة لصفحة الخدمات الرئيسية
-    </a>
-</div>   
     </div>
+
 </body>
 </html>
