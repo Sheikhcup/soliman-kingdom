@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المملكة السليمانية للاستشارات والخدمات الروحانية</title>
+    <!-- وسوم تويتر والشبكات الاجتماعية لإظهار الصورة والوصف العائم -->
+    <meta property="og:title" content="المملكة السليمانية للاستشارات والخدمات الروحانية">
+    <meta property="og:description" content="منصتنا الروحانية الرقمية لتقديم الاستشارات، العلاجات والتحصينات الشاملة بسرية تامة وموثوقية عالية.">
+    <meta property="og:image" content="https://github.io">
+    <meta property="og:url" content="https://github.io">
+    <meta name="twitter:card" content="summary_large_image">
+    <style>
+        /* تنسيقات عامة فخمة مع حركة ناعمة */
+        body {
+            margin: 0; padding: 0;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background: linear-gradient(135deg, #05070f 0%, #0b1326 100%);
+            color: #ffffff; min-height: 100vh;
+            display: flex; flex-direction: column; align-items: center;
+            overflow-x: hidden;
+        }
+
+        /* حركات متلألئة للخلفية */
+        body::before {
+            content: ""; position: absolute; width: 100%; height: 100%;
+            background-image: radial-gradient(rgba(241, 196, 15, 0.05) 1px, transparent 40px);
+            background-size: 300px 300px; opacity: 0.5; z-index: 1; pointer-events: none;
+        }
+
+/* شريط المتجر الملكي المتوهج بحركات النار */
+        nav {
+            width: 100%; background: #060a14;
+            border-bottom: 2px solid #f1c40f;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 15px 40px; box-sizing: border-box; position: sticky; top: 0; z-index: 100;
+            box-shadow: 0 5px 30px rgba(241, 196, 15, 0.15);
+        }
+        nav .logo { color: #f1c40f; font-size: 26px; font-weight: bold; text-shadow: 0 0 15px rgba(241, 196, 15, 0.6); }
+        
+nav .nav-links ul {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 20px;
+    list-style: none !important;
+    padding: 0;
+    margin: 0;
+}
+nav .nav-links a {
+    color: #f1c40f; 
+    text-decoration: none; 
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px 24px; 
+    border-radius: 30px; 
+    border: 1px solid rgba(241, 196, 15, 0.4);
+    background: rgba(11, 17, 30, 0.6);
+    backdrop-filter: blur(10px);
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    box-shadow: inset 0 0 12px rgba(241, 196, 15, 0.05);
+    display: inline-flex;
+    align-items: center;
+}
+
+nav .nav-links a:hover {
+    color: #0b111e !important; 
+    background: #f1c40f !important;
+    box-shadow: 0 0 20px #f1c40f, 0 0 40px rgba(241, 196, 15, 0.6);
+    transform: translateY(-5px) scale(1.05);
+    border-color: #f1c40f !important;
+}
+        /* عنوان قسم المقالات الرئيسي مع حركة وهج */
+        .section-title { text-align: center; margin-top: 50px; margin-bottom: 10px; z-index: 10; }
+        .section-title h2 { color: #f1c40f; font-size: 34px; font-weight: bold; text-shadow: 0 0 20px rgba(241, 196, 15, 0.4); margin: 0; }
+        .section-title::after {
+            content: ""; display: block; width: 80px; height: 3px; background: linear-gradient(90deg, transparent, #f1c40f, transparent); margin: 12px auto 0 auto; border-radius: 2px;
+        }
+
+        /* شبكة الكروت الاحترافية */
+        .articles-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px; width: 90%; max-width: 1200px; margin-top: 40px; padding-bottom: 60px; z-index: 10;
+        }
+
+        /* حركة نار: كارت المقال يتوهج ويتحرك بشكل احترافي عند مرور الماوس */
+        .article-card {
+            background: #0b111e; border: 1px solid rgba(241, 196, 15, 0.1);
+            border-radius: 20px; overflow: hidden; display: flex; flex-direction: column;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5); transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+        }
+        .article-card:hover { 
+            transform: translateY(-10px) scale(1.02); 
+            border-color: rgba(241, 196, 15, 0.6); 
+            box-shadow: 0 20px 40px rgba(241, 196, 15, 0.15), 0 0 25px rgba(241, 196, 15, 0.1);
+        }
+
+        /* تأثير الصورة الحية مع تقريب زووم حركي */
+        .article-image-box { width: 100%; height: 220px; overflow: hidden; position: relative; }
+        .article-image { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .article-card:hover .article-image { transform: scale(1.1); }
+
+        /* تفاصيل الكارت */
+        .article-content { padding: 25px; text-align: right; display: flex; flex-direction: column; justify-content: space-between; flex-grow: 1; }
+        .article-title { color: #ffffff; font-size: 22px; font-weight: bold; margin: 0 0 12px 0; transition: color 0.3s; }
+        .article-card:hover .article-title { color: #f1c40f; }
+        .article-desc { color: #94a3b8; font-size: 14px; line-height: 1.6; margin: 0 0 25px 0; }
+
+        /* تذييل الكارت والأزرار */
+        .article-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px; }
+        .comments-count { color: #475569; font-size: 13px; font-weight: 500; }
+        
+        /* زر الحجز المطور المتوهج باللون الأخضر الملكي */
+        .btn-read-more {
+            background: linear-gradient(135deg, #128c7e 0%, #25d366 100%); border: none; color: #ffffff;
+            font-size: 14px; font-weight: bold; cursor: pointer; padding: 12px 20px; border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2); transition: all 0.3s ease;
+        }
+        .btn-read-more:hover { 
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+            transform: scale(1.05);
+        }
+
+        /* أنيميشن نبض خفيف للوغو */
+        @keyframes pulse {
+            0% { text-shadow: 0 0 15px rgba(241, 196, 15, 0.4); }
+            50% { text-shadow: 0 0 25px rgba(241, 196, 15, 0.7); }
+            100% { text-shadow: 0 0 15px rgba(241, 196, 15, 0.4); }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">المملكة السليمانية 👑</div>
+    <div class="nav-links">
+<ul>
+                    <li><a href="index.html">👑 الرئيسية</a></li>
+                    <li><a href="services.html">👑 الخدمات</a></li>
+                    <li><a href="about.html">👑 معلومات عنا</a></li>
+                    <li><a href="blog.html">👑 المدونة</a></li>
+                    <li><a href="faq.html">❓ الأسئلة الشائعة</a></li>
+                    <li><a href="https://wa.me/966510239509" target="_blank" class="nav-whatsapp-btn">🟢 واتساب</a></li>
+                </ul>
+                </div>
+</nav>
+<!-- صندوق السلة المنبثق الفاخر -->
+<div id="cartDropdown" style="display: none; position: absolute; top: 75px; left: 30px; background: rgba(11, 17, 30, 0.95); border: 1px solid #f1c40f; border-radius: 15px; width: 320px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); padding: 15px; z-index: 1000; backdrop-filter: blur(10px);">
+    <h4 style="margin: 0 0 10px 0; color: #f1c40f; border-bottom: 1px solid rgba(241, 196, 15, 0.2); padding-bottom: 8px;">🛍️ سلة المشتريات الملكية</h4>
+    <div id="cartItemsList" style="max-height: 200px; overflow-y: auto; margin-bottom: 15px;">
+        <p style="font-size:12px; color:#bbb; text-align:center;">السلة فارغة حالياً</p>
+    </div>
+    <div style="font-weight: bold; text-align: left; color: #f1c40f; margin-bottom: 15px;">المجموع: <span id="cartTotal">0</span> درهم</div>
+    <a href="checkout.html" style="display: block; text-align: center; background: #f1c40f; color: #0b111e; padding: 10px; border-radius: 8px; text-decoration: none; font-weight: bold;">📦 إتمام طلب الحجز</a>
+</div>
+<div class="section-title">
+    <h2>المقالات والأقسام الروحانية</h2>
+</div>
+
+<!-- قسم الخدمات المكتمل بنجوم الزيارات الفخمة والروابط الفعالة 100 -->
+<div class="articles-grid">
+            <div class="article-card">
+            <div class="article-image-box">
+                <img src="images/roqia.jpg" alt="موافقة الأهل" class="article-image">
+            </div>
+            <div class="article-content">
+<div class="article-title"><a href="approval.html" style="color: inherit; text-decoration: none;">موافقة الأهل وتسهيل الزواج</a></div>                <div class="rating-stars" style="color: #f1c40f; font-size: 13px; margin: 5px 0; text-align: right;">⭐⭐⭐⭐⭐ <span style="color: #bbb; font-size: 11px;">(1.2k زيارة)</span></div>
+                <p class="article-desc">جلسات مخصصة لتأليف القلوب وتيسير أمور الزواج المبارك، بأقوى الطرق الروحانية المجربة.</p>
+                <div class="article-footer">
+                    <span class="comments-count">💬 3 تعليقات</span>
+<li><a href="https://wa.me/966510239509"target="_blank" class="nav-whatsapp-btn"style="animation: pulse 2s infinite;">🟢 واتساب</a></li>
+                </div>
+            </div>
+        </div>
+
+        <!--  الثاني: خواتم روحانية وقراءة فنجان -->
+        <div class="article-card">
+            <div class="article-image-box">
+                <img src="images/jk.jpg" alt="قراءة فنجان" class="article-image">
+            </div>
+            <div class="article-content">
+<div class="article-title"><a href="rings.html"style="color: inherit; text-decoration: none;"> خواتم روحانيةوقراة الفنجان</a></a></div>                <div class="rating-stars" style="color: #f1c40f; font-size: 13px; margin: 5px 0; text-align: right;">⭐⭐⭐⭐⭐ <span style="color: #bbb; font-size: 11px;">(3.5k زيارة)</span></div>
+                <p class="article-desc">كشف دقيقة للقراءة خطوط الفنجان واستبصار الأحداث، مع خواتم ملكية مخصصة للقبول والهيبة.</p>
+                <div class="article-footer">
+                    <span class="comments-count">💬 5 تعليقات</span>
+<li><a href="https://wa.me/966510239509"target="_blank" class="nav-whatsapp-btn"style="animation: pulse 2s infinite;">🟢 واتساب</a></li>
+</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- الكرت الثالث: جلب الحبيب -->
+        <div class="article-card">
+            <div class="article-image-box">
+                <img src="images/ho.jpg" alt="جلب الحبيب" class="article-image">
+            </div>
+            <div class="article-content">
+<div class="article-title"><a href="love.html" style="color: inherit; text-decoration: none;">جلب الحبيب وتأليف القلوب</a></div>                <div class="rating-stars" style="color: #f1c40f; font-size: 13px; margin: 5px 0; text-align: right;">⭐⭐⭐⭐⭐ <span style="color: #bbb; font-size: 11px;">(4.8k زيارة)</span></div>
+                <p class="article-desc">تأليف القلوب وإعادة المحبة والوئام بين الأحبة بنجاح، وإرجاع المطلقات وجلب الخطاب.</p>
+                <div class="article-footer">
+                    <span class="comments-count">💬 7 تعليقات</span>
+<li><a href="https://wa.me/966510239509"target="_blank" class="nav-whatsapp-btn"style="animation: pulse 2s infinite;">🟢 واتساب</a></li>
+                </div>
+            </div>
+        </div>
+
+<!-- بطاقة العلاجات الروحانية والتحصينات الاحترافية -->
+        <div class="article-card">
+            <div class="article-content">
+                <img src="images/pln.jpg" alt="العلاجات الروحانية" style="width: 100%; border-radius: 10px; max-height: 150px; object-fit: cover;">
+                <div class="article-title">
+                    <a href="therapy.html" style="color: inherit; text-decoration: none;">العلاجات الروحانية والتحصينات</a>
+                </div>
+                <p style="color: #cbd5e1; font-size: 0.9rem; margin-top: 5px; text-align: center;">⭐️⭐️⭐️⭐️⭐️ <span style="font-size: 0.8rem; color: #a1a1aa;">(2.1k زيارة)</span></p>
+                <p class="article-desc">
+                    جلسات مباركة لإبطال العوارض، التحصين الشامل من الأثر السلبي، وفتح طاقات القبول والتيسير بالقرآن والأوراد الشرعية.
+                </p>
+                <div class="article-footer">
+                    <span class="comments-count">📄 تعليقات 4</span>
+                    <a href="https://wa.me/966510239509" target="_blank" class="nav-whatsapp-btn" style="animation: pulse 2s infinite;">
+                        <span style="width: 10px; height: 10px; background-color: #22c55e; border-radius: 50%; display: inline-block;"></span> واتساب
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+<!-- الكرت الرابع: الرقية الشرعية -->
+        <div class="article-card">
+            <div class="article-image-box">
+                <img src="images/ro.jpg" alt="الرقية الشرعية" class="article-image">
+            </div>
+            <div class="article-content">
+<div class="article-title"><a href="ruqyah.html" style="color: inherit; text-decoration: none;">الرقية الشرعية لفك السحر</a></div>                <div class="rating-stars" style="color: #f1c40f; font-size: 13px; margin: 5px 0; text-align: right;">⭐⭐⭐⭐⭐ <span style="color: #bbb; font-size: 11px;">(2.9k زيارة)</span></div>
+                <p class="article-desc">جلسات متكاملة لإبطال السحر، تنظيف الهالة والتخلص من العكوسات والمس والعين وتحصين شامل من الكتاب والسنة.</p>
+                <div class="article-footer">
+                    <span class="comments-count">💬 4 تعليقات</span>
+<li><a href="https://wa.me/966510239509"target="_blank" class="nav-whatsapp-btn"style="animation: pulse 2s infinite;">🟢 واتساب</a></li>
+                </div>
+            </div>
+        </div>
+
+    </div>
+<!-- ================= قسم آراء عملائنا المطور ================= -->
+<style>
+    .opinions-section { padding: 60px 20px; text-align: center; background-color: #0c1322; }
+    .opinions-title { color: #f1c40f; font-size: 2.2rem; font-weight: bold; margin-bottom: 10px; }
+    .opinions-subtitle { color: #94a3b8; font-size: 1.1rem; margin-bottom: 40px; }
+    
+    /* شبكة الكروت الاحترافية المتطابقة */
+    .opinions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; }
+    .opinion-card { background: #111a2e; border: 1px solid #1e293b; border-radius: 12px; padding: 25px; text-align: right; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.2); }
+    .opinion-card:hover { border-color: #38bdf8; transform: translateY(-5px); }
+    
+    .card-stars { color: #f1c40f; font-size: 0.9rem; margin-bottom: 15px; }
+    .card-comment-text { color: #e2e8f0; font-size: 0.95rem; line-height: 1.7; font-style: italic; margin-bottom: 20px; }
+    .card-user-info { margin-top: auto; border-top: 1px solid #1e293b; padding-top: 15px; }
+    .card-user-name { color: #38bdf8; font-weight: bold; font-size: 1.1rem; }
+    .card-user-city { color: #94a3b8; font-size: 0.85rem; margin-top: 3px; }
+    .card-service-badge { display: inline-block; background: rgba(56, 189, 248, 0.1); color: #38bdf8; font-size: 0.8rem; padding: 4px 12px; border-radius: 50px; margin-top: 10px; font-weight: bold; }
+</style>
+
+<!-- ================= قسم آراء عملائنا المطور الخليجي ================= -->
+<style>
+    .opinions-section { padding: 60px 20px; text-align: center; background-color: #0c1322; }
+    .opinions-title { color: #f1c40f; font-size: 2.2rem; font-weight: bold; margin-bottom: 10px; }
+    .opinions-subtitle { color: #94a3b8; font-size: 1.1rem; margin-bottom: 40px; }
+    
+    /* شبكة الكروت الاحترافية المتطابقة */
+    .opinions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; }
+    .opinion-card { background: #111a2e; border: 1px solid #1e293b; border-radius: 12px; padding: 25px; text-align: right; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.2); }
+    .opinion-card:hover { border-color: #38bdf8; transform: translateY(-5px); }
+    
+    .card-stars { color: #f1c40f; font-size: 0.9rem; margin-bottom: 15px; }
+    .card-comment-text { color: #e2e8f0; font-size: 0.95rem; line-height: 1.7; font-style: italic; margin-bottom: 20px; }
+    .card-user-info { margin-top: auto; border-top: 1px solid #1e293b; padding-top: 15px; }
+    .card-user-name { color: #38bdf8; font-weight: bold; font-size: 1.1rem; }
+    .card-user-city { color: #94a3b8; font-size: 0.85rem; margin-top: 3px; }
+    .card-service-badge { display: inline-block; background: rgba(56, 189, 248, 0.1); color: #38bdf8; font-size: 0.8rem; padding: 4px 12px; border-radius: 50px; margin-top: 10px; font-weight: bold; }
+</style>
+
+<section class="opinions-section">
+    <div class="opinions-title">آراء عملائنا</div>
+    <div class="opinions-subtitle">تجارب حقيقية من ناس استفادت من خدمات الشيخ</div>
+
+    <div class="opinions-grid">
+        <!-- كرت 1 -->
+        <div class="opinion-card">
+            <div class="card-stars">★★★★★</div>
+            <div class="card-comment-text">"كنت تعبان جداً ومحدش عارف السبب، تواصلت مع الشيخ وقال لي عندك عارض وفكه في أسبوع، ودلوقتي حياتي استقرت واتغيرت 180 درجة والحمد لله."</div>
+            <div class="card-user-info">
+                <div class="card-user-name">أبو عبد الرحمن</div>
+                <div class="card-user-city">السعودية</div>
+                <span class="card-service-badge">إبطال العوارض</span>
+            </div>
+        </div>
+
+        <!-- كرت 2 -->
+        <div class="opinion-card">
+            <div class="card-stars">★★★★★</div>
+            <div class="card-comment-text">"الحمد لله بعد فضل الله ثم جلسات التحصين والقبول مع الشيخ، تيسرت أمور زواجي سريعاً بعد تعطيل طويل جداً بدون أسباب واضحة."</div>
+            <div class="card-user-info">
+                <div class="card-user-name">سارة م.</div>
+                <div class="card-user-city">الكويت</div>
+                <span class="card-service-badge">تيسير الزواج</span>
+            </div>
+        </div>
+
+        <!-- كرت 3 -->
+        <div class="opinion-card">
+            <div class="card-stars">★★★★★</div>
+            <div class="card-comment-text">"البيت كان مليان خلافات ومشاكل يومية مستمرة، بفضل الله ثم عمل التوفيق والتحصين الشامل من الشيخ رجعت الطمأنينة لأهلي وبيتي."</div>
+            <div class="card-user-info">
+                <div class="card-user-name">أم سلطان</div>
+                <div class="card-user-city">الإمارات</div>
+                <span class="card-service-badge">تأليف القلوب</span>
+            </div>
+        </div>
+
+        <!-- كرت 4 -->
+        <div class="opinion-card">
+            <div class="card-stars">★★★★★</div>
+            <div class="card-comment-text">"تواصلت مع الشيخ لطلب التحصين وفتح طاقات القبول والتيسير في عملي وتجارتي، وبفضل الله لمست أثراً طيباً وتوفيقاً كبيراً."</div>
+            <div class="card-user-info">
+                <div class="card-user-name">خالد الشمري</div>
+                <div class="card-user-city">قطر</div>
+                <span class="card-service-badge">التحصين والقبول</span>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- =========================================================== -->
+
+<!-- ================= قسم شاركنا تجربتك الموسع جداً ================= -->
+<style>
+    .share-experience-section { 
+        padding: 80px 20px !important; 
+        background-color: #0c1322 !important; 
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+        box-sizing: border-box !important;
+    }
+    .form-container { 
+        width: 100% !important;
+        max-width: 850px !important; 
+        background: #111a2e !important; 
+        border: 1px solid #1e293b !important; 
+        border-radius: 16px !important; 
+        padding: 50px 40px !important; 
+        box-shadow: 0 15px 35px rgba(0,0,0,0.4) !important;
+        box-sizing: border-box !important;
+    }
+    .form-title { color: #f1c40f !important; font-size: 2.4rem !important; font-weight: bold !important; margin-bottom: 40px !important; text-align: center !important; }
+    .form-group { margin-bottom: 35px !important; text-align: right !important; }
+    .form-group label { display: block !important; color: #38bdf8 !important; font-size: 1.15rem !important; margin-bottom: 12px !important; font-weight: bold !important; }
+    
+    .form-control { 
+        width: 100% !important; 
+        padding: 18px 20px !important; 
+        background: #0c1322 !important; 
+        border: 1px solid #1e293b !important; 
+        border-radius: 10px !important; 
+        color: #fff !important; 
+        font-size: 1.1rem !important; 
+        box-sizing: border-box !important; 
+        transition: all 0.3s ease !important; 
+        text-align: right !important; 
+    }
+    .form-control:focus { border-color: #38bdf8 !important; outline: none !important; box-shadow: 0 0 12px rgba(56, 189, 248, 0.25) !important; }
+    textarea.form-control { min-height: 180px !important; line-height: 1.8 !important; }
+    
+    .submit-btn { width: 100% !important; padding: 18px !important; background: linear-gradient(135deg, #f1c40f, #e67e22) !important; color: #0c1322 !important; border: none !important; border-radius: 10px !important; font-size: 1.25rem !important; font-weight: bold !important; cursor: pointer !important; transition: all 0.3s ease !important; margin-top: 20px !important; }
+    .submit-btn:hover { transform: translateY(-3px) !important; box-shadow: 0 8px 25px rgba(241, 196, 15, 0.5) !important; }
+</style>
+
+<section class="share-experience-section">
+    <div class="form-container">
+        <div class="form-title">شاركنا تجربتك</div>
+        
+        <form onsubmit="event.preventDefault(); alert('تم إرسال تجربتك بنجاح ومراجعتها من قبل الإدارة! شكرًا لك.'); this.reset();">
+            <div class="form-group">
+                <label>اسمك</label>
+                <input type="text" class="form-control" placeholder="اكتب اسمك هنا..." required>
+            </div>
+            
+            <div class="form-group">
+                <label>الدولة</label>
+                <input type="text" class="form-control" placeholder="مثال: السعودية، الكويت، قطر..." required>
+            </div>
+            
+            <div class="form-group">
+                <label>نوع الخدمة</label>
+                <input type="text" class="form-control" placeholder="مثال: تحصين، إبطال عوارض..." required>
+            </div>
+            
+            <div class="form-group">
+                <label>اكتب تعليقك هنا...</label>
+                <textarea class="form-control" placeholder="اكتب تفاصيل تجربتك بكل صدق..." required></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn">إرسال التعليق</button>
+        </form>
+    </div>
+</section>
+
+<script>
+    function contactWhatsApp(sectionName) {
+        var cleanSection = sectionName ? sectionName.trim() : "خدماتنا";
+        var myPersonalNumber = "966510239509";
+        var messageText = "مرحباً المملكة السليمانية، أود حجز خدمة من قسم " + cleanSection;
+        var finalUrl = "https://wa.me" + myPersonalNumber + "?text=" + encodeURIComponent(messageText);
+        window.open(finalUrl, '_blank');
+    }
+</script>
+<!-- ================= قسم الأسئلة الشائعة التفاعلي بأسفل الرئيسية ================= -->
+<style>
+    .main-faq-section { padding: 60px 20px !important; background-color: #0c1322 !important; text-align: center !important; }
+    .main-faq-container { max-width: 850px !important; margin: 0 auto !important; background: #111a2e !important; border: 1px solid #1e293b !important; border-radius: 16px !important; padding: 45px 30px !important; box-shadow: 0 15px 35px rgba(0,0,0,0.4) !important; }
+    .main-faq-title { color: #f1c40f !important; font-size: 2.2rem !important; font-weight: bold !important; margin-bottom: 10px !important; }
+    .main-faq-subtitle { color: #94a3b8 !important; font-size: 1.1rem !important; margin-bottom: 35px !important; }
+    
+    .main-faq-item { border: 1px solid #1e293b !important; border-radius: 10px !important; margin-bottom: 15px !important; overflow: hidden !important; background: #0c1322 !important; text-align: right !important; }
+    .main-faq-question { padding: 20px !important; background: #0c1322 !important; color: #38bdf8 !important; font-size: 1.15rem !important; font-weight: bold !important; cursor: pointer !important; display: flex !important; justify-content: space-between !important; align-items: center !important; transition: all 0.3s ease !important; user-select: none !important; }
+    .main-faq-question:hover { background: #111a2e !important; color: #f1c40f !important; }
+    .main-faq-toggle-icon { font-size: 1.3rem !important; color: #94a3b8 !important; transition: transform 0.3s ease !important; }
+    
+    .main-faq-answer { max-height: 0 !important; overflow: hidden !important; padding: 0 20px !important; background: #111a2e !important; color: #e2e8f0 !important; font-size: 1.05rem !important; line-height: 1.8 !important; transition: max-height 0.3s ease-out, padding 0.3s ease !important; }
+    
+    .main-faq-item.active .main-faq-toggle-icon { transform: rotate(45deg) !important; color: #f1c40f !important; }
+    .main-faq-item.active .main-faq-answer { padding: 20px !important; border-top: 1px solid #1e293b !important; }
+</style>
+
+<section class="main-faq-section">
+    <div class="main-faq-container">
+        <div class="main-faq-title">الأسئلة الشائعة</div>
+        <div class="main-faq-subtitle">إجابات على أهم الأسئلة التي تجول في ذهن الزوار الكرام</div>
+        
+        <!-- سؤال 1 -->
+        <div class="main-faq-item">
+            <div class="main-faq-question" onclick="toggleMainFaq(this)">
+                <span>إزاي أقدر أتواصل مع الشيخ؟</span>
+                <span class="main-faq-toggle-icon">✦</span>
+            </div>
+<div class="main-faq-answer">
+                <p style="margin: 0; line-height: 1.8;">يمكنكم التواصل مع الشيخ مباشرة عبر تطبيق الواتساب بالضغط على الرقم التالي: <a href="https://wa.me/966510239509" target="_blank" style="color: #22c55e !important; text-decoration: none; font-weight: bold; display: inline-block; direction: ltr;">+966510239509</a> حيث يتواجد الرد على مدار الساعة للإجابة الشاملة على كافة استفساراتكم وحجز الجلسات الاستشارية.</p>
+            </div>
+                </div>
+
+        <!-- سؤال 2 -->
+        <div class="main-faq-item">
+            <div class="main-faq-question" onclick="toggleMainFaq(this)">
+                <span>الخدمات الروحانية بتاخد قد إيه وقت؟</span>
+                <span class="main-faq-toggle-icon">✦</span>
+            </div>
+            <div class="main-faq-answer">
+                <p style="margin: 0;">تختلف المدة الزمنية بحسب الحالة ونوع الخدمة المطلوبة (سواء كانت تحصيناً، أو إبطال عوارض، أو تيسير قبول)، وغالباً ما تبدأ الثمار والنتائج الطيبة بالظهور خلال الأيام الأولى من بدء الجلسات المباركة بتوفيق الله.</p>
+            </div>
+        </div>
+
+        <!-- سؤال 3 -->
+        <div class="main-faq-item">
+            <div class="main-faq-question" onclick="toggleMainFaq(this)">
+                <span>هل في ضمان لنتيجة العمل الروحاني؟</span>
+                <span class="main-faq-toggle-icon">✦</span>
+            </div>
+            <div class="main-faq-answer">
+                <p style="margin: 0;">كل الأعمال والخدمات تُبنى على أسباب شرعية وأوراد مباركة موجهة بيقين تام، وبفضل الله وتوفيقه حققت جلساتنا نجاحاً باهراً ونسب قبول ممتازة جداً لدى كل من تعامل معنا في الخليج والوطن العربي.</p>
+            </div>
+        </div>
+
+        <!-- سؤال 4 -->
+        <div class="main-faq-item">
+            <div class="main-faq-question" onclick="toggleMainFaq(this)">
+                <span>هل بياناتي ومعلوماتي بتفضل سرية؟</span>
+                <span class="main-faq-toggle-icon">✦</span>
+            </div>
+            <div class="main-faq-answer">
+                <p style="margin: 0;">نعم، الخصوصية والسرية التامة هي المبدأ الأساسي والأول لدينا. جميع استشاراتكم وبياناتكم الشخصية وتفاصيل حالاتكم تظل محاطة بخصوصية وأمان مطلق ولا يمكن لأي طرف آخر الاطلاع عليها.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    if (typeof toggleMainFaq !== 'function') {
+        function toggleMainFaq(element) {
+            const item = element.parentElement;
+            const answer = item.querySelector('.main-faq-answer');
+            
+            document.querySelectorAll('.main-faq-item').forEach(i => {
+                if (i !== item && i.classList.contains('active')) {
+                    i.classList.remove('active');
+                    i.querySelector('.main-faq-answer').style.setProperty('max-height', '0', 'important');
+                }
+            });
+            
+            item.classList.toggle('active');
+            if (item.classList.contains('active')) {
+                answer.style.setProperty('max-height', answer.scrollHeight + "px", 'important');
+            } else {
+                answer.style.setProperty('max-height', '0', 'important');
+            }
+        }
+    }
+</script>
+<!-- ========================================================================= -->
+
+<!-- ================= زر واتساب عائم واحترافي في الزاوية ================= -->
+<style>
+    .floating-whatsapp {
+        position: fixed !important;
+        bottom: 25px !important;
+        left: 25px !important;
+        width: 60px !important;
+        height: 60px !important;
+        background-color: #22c55e !important;
+        color: #fff !important;
+        border-radius: 50% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4) !important;
+        z-index: 9999 !important;
+        text-decoration: none !important;
+        transition: all 0.3s ease !important;
+        animation: whatsapp-pulse 2s infinite !important;
+    }
+    .floating-whatsapp:hover {
+        transform: scale(1.1) !important;
+        box-shadow: 0 6px 20px rgba(34, 197, 94, 0.6) !important;
+    }
+    .floating-whatsapp svg {
+        width: 32px !important;
+        height: 32px !important;
+        fill: currentColor !important;
+    }
+    @keyframes whatsapp-pulse {
+        0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+        70% { box-shadow: 0 0 0 15px rgba(34, 197, 94, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+    }
+</style>
+
+<a href="https://wa.me/966510239509" target="_blank" class="floating-whatsapp" title="تواصل معنا عبر واتساب">
+    <svg viewBox="0 0 24 24">
+        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.717-1.454L0 24zm6.59-4.846c1.66.986 3.284 1.489 4.736 1.49 5.432 0 9.843-4.37 9.846-9.742.002-2.596-1.011-5.04-2.852-6.883C16.484 2.177 14.043 1.161 11.45 1.16 6.136 1.16 1.8 5.532 1.797 10.904c-.001 1.545.424 3.05 1.229 4.364l-.992 3.626 3.73-.974l.883.524zM16.71 14.1c-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.668.149-.198.297-.767.967-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.174.2-.298.298-.497.099-.198.05-.371-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347z"/>
+    </svg>
+</a>
+
+</body>
+</html>
