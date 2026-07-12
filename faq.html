@@ -10,95 +10,202 @@
             color: #ffffff;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        /* تنسيق الآية الكريمة */
+        .quran-verse {
+            text-align: center;
+            font-size: 26px;
+            color: gold;
+            font-weight: bold;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+        .quran-ref {
+            text-align: center;
+            color: #8da2fb;
+            font-size: 14px;
+            margin-bottom: 40px;
+        }
+
+        /* حاوية التعريف بالشيخ */
+        .about-section {
+            max-width: 800px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px dashed rgba(212, 175, 55, 0.3);
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 5px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .about-title {
+            color: gold;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .about-text {
+            font-size: 16px;
+            color: #e2e8f0;
+            line-height: 1.8;
+        }
+
+        h1.section-title {
+            color: gold;
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 5px;
+            font-size: 30px;
+        }
+        .subtitle {
+            color: #8da2fb;
+            text-align: center;
+            margin-bottom: 35px;
+            font-size: 15px;
+        }
+
+        /* حاوية الكروت الأفقية */
+        .cards-container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+            margin-bottom: 40px;
+        }
+
+        /* تصميم الكرت المربع */
+        .faq-card {
+            flex: 1;
+            min-width: 250px;
+            max-width: 280px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 30px 20px;
+            text-align: center;
+            box-sizing: border-box;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-        .container {
-            max-width: 800px;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid gold;
-            border-radius: 8px;
-            padding: 20px;
-            box-sizing: border-box;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-        }
-        h1 {
-            color: gold;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .faq-item {
-            margin-bottom: 25px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding-bottom: 20px;
-        }
-        .question {
-            font-size: 20px;
-            font-weight: bold;
-            color: gold;
-            margin-bottom: 12px;
+
+        .card-number {
+            width: 35px;
+            height: 35px;
+            background-color: #ffffff;
+            color: #0b0f19;
+            border-radius: 50%;
             display: flex;
             align-items: center;
-            gap: 10px;
-        }
-        .answer {
+            justify-content: center;
+            font-weight: bold;
             font-size: 16px;
-            color: #e0e0e0;
-            line-height: 1.6;
-            padding-right: 25px;
+            margin-bottom: 20px;
         }
+
+        .question {
+            font-size: 19px;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+
+        .answer {
+            font-size: 14px;
+            color: #a0aec0;
+            line-height: 1.6;
+        }
+
         .btn-back {
             display: inline-block;
-            margin-top: 25px;
-            padding: 12px 24px;
+            padding: 12px 35px;
             background: gold;
             color: #0b0f19;
             text-decoration: none;
             font-weight: bold;
-            border-radius: 4px;
+            border-radius: 6px;
             transition: 0.3s;
+            margin-top: 20px;
         }
         .btn-back:hover {
             background: #fff;
+        }
+
+        @media (max-width: 900px) {
+            .cards-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .faq-card {
+                width: 95%;
+                max-width: 100%;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>❓ الأسئلة الشائعة (إزاي بنشتغل؟)</h1>
+    <!-- قسم الآية الكريمة -->
+    <div class="quran-verse">« قُلْ هُوَ لِلَّذِينَ آمَنُوا هُدًى وَشِفَاءٌ »</div>
+    <div class="quran-ref">فصلت — ٤٤</div>
 
-        <!-- الخطوة الأولى -->
-        <div class="faq-item">
-            <div class="question">1️⃣ كيف يمكنني التواصل معكم للبدء؟</div>
-            <div class="answer">يمكنك التواصل معنا مباشرة بكل ثقة عبر إرسال رسالة على الواتساب على الرقم التالي: <strong>00966510239509</strong> واحكي مشكلتك بكل راحة وأمان وسرية تامة.</div>
+    <!-- قسم التعريف بالشيخ -->
+    <div class="about-section">
+        <div class="about-title">عن الشيخ حسن عباس</div>
+        <div class="about-text">
+            الشيخ حسن عباس من أكبر الشيوخ الروحانيين في الوطن العربي، يتميز بالأمانة والسرية والدقة في الكشف وقوة الأعمال الروحانية المشروعة. ساعد آلاف الحالات في حل مشاكلهم وفك سحرهم وإعادة أحبائهم بإذن الله تعالى.
         </div>
-
-        <!-- الخطوة الثانية -->
-        <div class="faq-item">
-            <div class="question">2️⃣ ما هي خطوة الكشف الروحاني؟</div>
-            <div class="answer">بعد تواصلك معنا، يقوم الشيخ بعمل كشف دقيق ومفصل وموثوق لتحديد سبب المشكلة الأساسي وتحديد نوع العمل الروحاني المطلوب لحالتك بالظبط.</div>
-        </div>
-
-        <!-- الخطوة الثالثة -->
-        <div class="faq-item">
-            <div class="question">3️⃣ كيف يتم تنفيذ العمل الروحاني؟</div>
-            <div class="answer">بمجرد تحديد المشكلة، نبدأ فوراً في تنفيذ العمل الروحاني المناسب والمخصص لك بأمانة شديدة وسرية تامة ومطلقة لضمان أفضل نتيجة.</div>
-        </div>
-
-        <!-- الخطوة الرابعة -->
-        <div class="faq-item">
-            <div class="question">4️⃣ متى تظهر نتيجة العمل الروحاني؟</div>
-            <div class="answer">تتابع معنا خطوة بخطوة أثناء فترة العمل، لحد ما تشوف النتيجة الإيجابية والظهور الفعلي لها بنجاح وبإذن الله تعالى.</div>
-        </div>
-
-        <center>
-            <a href="index.html" class="btn-back">العودة للرئيسية</a>
-        </center>
     </div>
+
+    <!-- قسم خطوات العمل والخدمات -->
+    <h1 class="section-title">إزاي بنشتغل؟</h1>
+    <div class="subtitle">مجموعة شاملة من الخدمات الروحانية المضمونة بإذن الله</div>
+
+    <div class="cards-container">
+
+        <!-- كرت 1 -->
+        <div class="faq-card">
+            <div class="card-number">1</div>
+            <div class="question">تواصل معانا</div>
+            <div class="answer">ابعت رسالة على واتساب 00966510239509 واحكي مشكلتك بكل ثقة وراحة وأمان وسرية تامة.</div>
+        </div>
+
+        <!-- كرت 2 -->
+        <div class="faq-card">
+            <div class="card-number">2</div>
+            <div class="question">الكشف الروحاني</div>
+            <div class="answer">الشيخ يعمل كشف دقيق ومفصل وموثوق ويحدد سبب المشكلة ونوع العمل المطلوب لحالتك بالضبط.</div>
+        </div>
+
+        <!-- كرت 3 -->
+        <div class="faq-card">
+            <div class="card-number">3</div>
+            <div class="question">تنفيذ العمل</div>
+            <div class="answer">نبدأ فوراً في تنفيذ العمل الروحاني المناسب والمخصص لك بأمانة شديدة وسرية تامة ومطلقة لضمان أفضل نتيجة.</div>
+        </div>
+
+        <!-- كرت 4 -->
+        <div class="faq-card">
+            <div class="card-number">4</div>
+            <div class="question">ظهور النتيجة</div>
+            <div class="answer">تابع معانا خطوة بخطوة أثناء فترة العمل، لحد ما تشوف النتيجة الإيجابية والظهور الفعلي لها بنجاح وبإذن الله تعالى.</div>
+        </div>
+
+    </div>
+
+    <!-- زر العودة -->
+    <a href="index.html" class="btn-back">العودة للرئيسية</a>
 
 </body>
 </html>
