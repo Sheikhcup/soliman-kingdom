@@ -12,38 +12,39 @@
     <meta name="twitter:card" content="summary_large_image">
     <style>
 @media (max-width: 768px) {
-    /* تحويل الحاوية الكبرى (اللوجو والأزرار) لترتيب عمودي */
+    /* جعل الحاوية الكبرى مرنة وتسمح بملء الشاشة بالعرض */
     nav, .nav-links {
         display: flex !important;
-        flex-direction: column !important;
+        flex-direction: column !important; /* اللوجو فوق والأزرار تحت */
         align-items: center !important;
         width: 100% !important;
-        height: auto !important;
     }
 
-    /* تحويل قائمة الأزرار نفسها لتصبح عمودية بالكامل */
+    /* جعل الأزرار تترتب "بالعرض" وتلتف تلقائياً بشكل فخم ومتوسط */
     .nav-links ul {
         display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        width: 100% !important;
+        flex-direction: row !important; /* ترتيب أفقي (بالعرض) */
+        flex-wrap: wrap !important;     /* الالتفاف التلقائي لحماية الأزرار من التداخل */
+        justify-content: center !important; /* توسيط الأزرار في المنتصف تماماً */
+        gap: 8px !important;            /* مسافة مريحة بين الأزرار */
         padding: 0 !important;
         margin: 10px 0 !important;
         list-style: none !important;
+        width: 100% !important;
     }
 
-    /* تنسيق عناصر القائمة والأزرار لتأخذ عرض الشاشة بشكل مريح وفخم */
+    /* تنسيق حجم وتوسيط كل زر ليناسب العرض الضيق للموبايل */
     .nav-links ul li {
-        width: 85% !important;
-        margin: 6px 0 !important;
-        text-align: center !important;
+        width: auto !important; 
+        text-align: center !important; /* توسيط النصف الملتف بالملي */
     }
 
     .nav-links ul li a {
-        display: block !important;
-        width: 100% !important;
-        padding: 12px !important;
-        box-sizing: border-box !important;
+        display: inline-block !important;
+        padding: 6px 12px !important;  
+        font-size: 14px !important;    
+        background: rgba(255, 255, 255, 0.05) !important; /* لمسة خلفية خفيفة وفخمة للأزرار */
+        border-radius: 4px !important;
     }
 }
         /* تنسيقات عامة فخمة مع حركة ناعمة */
