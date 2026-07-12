@@ -11,15 +11,24 @@
     <meta property="og:url" content="https://github.io">
     <meta name="twitter:card" content="summary_large_image">
     <style>
-        @media (max-width: 768px) {
-    /* تنسيق أزرار التنقل العلوية للموبايل */
-    nav, .navbar, .menu {
-        display: flex !important;
+@media (max-width: 768px) {
+    .navbar {
         flex-direction: column !important;
         align-items: center !important;
-        gap: 10px !important;
+        padding: 10px !important;
     }
-    /* ضبط حجم الخطوط لتبدو متناسقة */
+    .nav-links ul, nav ul, .menu ul {
+        flex-direction: column !important;
+        gap: 10px !important;
+        padding: 0 !important;
+        text-align: center !important;
+        display: flex !important;
+    }
+    .nav-links a, nav a, .menu a {
+        display: block !important;
+        width: 100% !important;
+    }
+}    /* ضبط حجم الخطوط لتبدو متناسقة */
     h1 { font-size: 24px !important; }
     h2 { font-size: 20px !important; }
     p, a { font-size: 16px !important; }
