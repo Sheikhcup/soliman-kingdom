@@ -12,23 +12,26 @@
     <meta name="twitter:card" content="summary_large_image">
     <style>
 @media (max-width: 768px) {
-    .navbar {
+    /* إجبار الشريط العلوي وكل ما بداخله على الترتيب العمودي المنتظم */
+    header, nav, [class*="nav"], [class*="menu"], ul {
+        display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
-        padding: 10px !important;
-    }
-    .nav-links ul, nav ul, .menu ul {
-        flex-direction: column !important;
-        gap: 10px !important;
-        padding: 0 !important;
-        text-align: center !important;
-        display: flex !important;
-    }
-    .nav-links a, nav a, .menu a {
-        display: block !important;
+        justify-content: center !important;
         width: 100% !important;
+        gap: 12px !important;
+        padding: 10px 0 !important;
     }
-}    /* ضبط حجم الخطوط لتبدو متناسقة */
+    /* جعل كل زر ينزل في سطر مستقل وبحجم خط مناسب للموبايل */
+    nav a, [class*="nav"] a, li {
+        display: inline-block !important;
+        width: auto !important;
+        text-align: center !important;
+        font-size: 14px !important;
+        margin: 2px 0 !important;
+    }
+    
+        }    /* ضبط حجم الخطوط لتبدو متناسقة */
     h1 { font-size: 24px !important; }
     h2 { font-size: 20px !important; }
     p, a { font-size: 16px !important; }
